@@ -13,12 +13,19 @@
 <body onload="init()">
     <div class="alert alert-warning" role="alert" style="display: none">
     </div>
+    <div class="confirm-modal modal">
+        <p data-trans="ARE_YOU_SURE">Are You Sure?</p>
+        <div class="confirm-buttons">
+            <button class="btn btn-light confirm" data-trans="OK">OK</button>
+            <button class="btn btn-light" data-trans="CANCEL" onclick="onCloseModal()">Cancel</button>
+        </div>
+    </div>
     <div class="update-modal modal">
         <label for="update"></label>
         <input type="text" name="update" class="update">
         <div class="update-buttons">
-            <button class="btn btn-light" onclick="onCloseModal()">cancel</button>
-            <button class="update-button btn btn-light">OK</button>
+            <button class="btn btn-light" data-trans="CANCEL" onclick="onCloseModal()">Cancel</button>
+            <button class="update-button btn btn-light" data-trans="OK">OK</button>
         </div>
     </div>
     <div class="details-modal modal">
@@ -38,75 +45,75 @@
             <tbody>
                 <tr>
                     <td>
-                        <label for="title">Title:</label>
+                        <label for="title" data-trans="TITLE">Title:</label>
                     </td>
                     <td>
-                        <input type="text" name="title" class="title" value="Title">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="author">Author:</label>
-                    </td>
-                    <td>
-                        <input type="text" name="author" class="author" value="Author">
+                        <input type="text" name="title" class="title" data-trans="TITLE" placeholder="Title">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label for="price">Price:</label>
+                        <label for="author" data-trans="AUTHOR">Author:</label>
                     </td>
                     <td>
-                        <input type="text" name="price" class="price" value="10">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="img-url">Link to cover:</label>
-                    </td>
-                    <td>
-                        <input type="text" name="img-url" class="img-url" value="https://via.placeholder.com/300">
+                        <input type="text" name="author" class="author" data-trans="AUTHOR" placeholder="Author">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label for="rating">Rating:</label>
+                        <label for="price" data-trans="PRICE">Price:</label>
                     </td>
                     <td>
-                        <input type="text" name="rating" class="rating" value="10">
+                        <input type="text" name="price" class="price" placeholder="10">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label for="qty">Quantity:</label>
+                        <label for="img-url" data-trans="LINK_TO_COVER">Link to cover:</label>
                     </td>
                     <td>
-                        <input type="text" name="qty" class="qty" value="10">
+                        <input type="text" name="img-url" class="img-url" placeholder="https://via.placeholder.com/300">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="rating" data-trans="RATING">Rating:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="rating" class="rating" placeholder="10">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="qty" data-trans="QUANTITY">Quantity:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="qty" class="qty" placeholder="10">
                     </td>
                 </tr>
             </tbody>
         </table>
         <div class="new-book-buttons">
-            <button class="btn btn-light" onclick="onCloseModal()">cancel</button>
-            <button class="btn btn-light" onclick="onSubmitNewBook()">OK</button>
+            <button class="btn btn-light" onclick="onCloseModal()" data-trans="CANCEL">cancel</button>
+            <button class="btn btn-light" onclick="onSubmitNewBook()" data-trans="OK">OK</button>
         </div>
     </div>
     <div class="main-container">
         <button class="add-book btn btn-light" onclick="onAddBook()">+</button>
         <div class="empty-display">
-            <h1>no books to show</h1>
+            <h1 data-trans="EMPTY_SHOP">no books to show</h1>
         </div>
         <div class="books-container">
             <table class="table">
                 <thead class="thead-dark">
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Price</th>
-                    <th>Cover</th>
-                    <th>Rating</th>
-                    <th>Quantity</th>
-                    <th>Options</th>
+                    <th data-trans="ID">ID</th>
+                    <th data-trans="TITLE">Title</th>
+                    <th data-trans="AUTHOR">Author</th>
+                    <th data-trans="PRICE">Price</th>
+                    <th data-trans="COVER">Cover</th>
+                    <th data-trans="RATING">Rating</th>
+                    <th data-trans="QUANTITY">Quantity</th>
+                    <th data-trans="OPTIONS">Options</th>
                 </thead>
                 <tbody>
 
@@ -114,19 +121,25 @@
             </table>
         </div>
         <div class="control-bar">
-            <label for="filter">Filter By:</label>
-            <select name="filter" id="filter" onchange="onFilterBooks(this.value)">
-                <option value="all">All</option>
-                <option value="in-stock">In Stock</option>
-            </select>
-            <label for="sort">Sort By:</label>
-            <select name="sort" id="sort" onchange="onSortBooks(this.value)">
-                <option value="title">Title</option>
-                <option value="author">Author</option>
-                <option value="rating">Rating</option>
-                <option value="price">Price</option>
-            </select>
-            <div class="page-info">
+            <div class="filter-bar">
+                <label for="filter" data-trans="FILTER">Filter By:</label>
+                <select name="filter" id="filter" onchange="onFilterBooks(this.value)">
+                    <option value="all" data-trans="ALL">All</option>
+                    <option value="in-stock" data-trans="IN_STOCK">In Stock</option>
+                </select>
+                <label for="sort" data-trans="SORT">Sort By:</label>
+                <select name="sort" id="sort" onchange="onSortBooks(this.value)">
+                    <option value="title" data-trans="TITLE">Title</option>
+                    <option value="author" data-trans="AUTHOR">Author</option>
+                    <option value="rating" data-trans="RATING">Rating</option>
+                    <option value="price" data-trans="PRICE">Price</option>
+                </select>
+            </div>
+            <div class="lang-bar">
+                <div class="change-lang he" onclick="onChangeLang('he')"></div>
+                <div class="change-lang en" onclick="onChangeLang('en')"></div>
+            </div>
+            <div class="pagination-bar">
                 <div class="page-label"></div>
                 <div class="page-nav"></div>
             </div>
@@ -136,6 +149,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script src="js/storage-service.js"></script>
+    <script src="js/translate-service.js"></script>
     <script src="js/book-shop-service.js"></script>
     <script src="js/book-shop-controller.js"></script>
 </body>

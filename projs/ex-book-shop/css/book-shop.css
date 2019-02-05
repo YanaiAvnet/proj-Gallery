@@ -4,6 +4,14 @@ body {
     background-image: linear-gradient(to bottom, antiquewhite, rgb(196, 183, 167));
 }
 
+body.rtl {
+    direction: rtl;
+}
+
+.empty-display h1 {
+    text-align: center;
+}
+
 .main-container {
     display: flex;
     flex-flow: column;
@@ -69,14 +77,31 @@ thead * {
     border: 1px solid black;
 }
 
+body.rtl .add-book {
+    right: initial;
+    left: 10px;
+}
+
 .add-book:hover {
     border: 1px solid black;
 }
 
-.page-info {
+.pagination-bar {
     display: flex;
     flex-direction: row;
-    float: right;
+}
+
+.filter-bar {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    align-self: center;
+}
+
+.filter-bar label {
+    align-self: center;
+    margin: 0;
+    padding: 0 10px;
 }
 
 .page-label {
@@ -90,6 +115,9 @@ thead * {
     bottom: 0;
     padding: 20px;
     width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .modal {
@@ -101,6 +129,24 @@ thead * {
     transform: translate(-50%, -50%);
     z-index: 2;
     border-radius: 10px;
+}
+
+.confirm-modal {
+    width: 150px;
+    height: 100px;
+    padding: 5px;
+}
+
+.confirm-modal p {
+    text-align: center;
+    padding: 5px;
+}
+
+.confirm-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: space-evenly;
 }
 
 .update-modal {
@@ -194,4 +240,29 @@ thead * {
     padding: 0;
     font-weight: bold;
     font-size: .7em;
+}
+
+.lang-bar {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 70px;
+}
+
+.change-lang {
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.change-lang.he {
+    background-image: url('../img/he-icon.png');
+    float: right;
+}
+
+.change-lang.en {
+    background-image: url('../img/en-icon.png');
+    float: left;
 }

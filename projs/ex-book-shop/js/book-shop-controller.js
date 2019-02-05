@@ -8,6 +8,7 @@ function init() {
     renderBooks();
     renderPageNav();
     $('.modal').hide();
+    onChangeLang(getCurrLang());
 }
 
 function renderBooks() {
@@ -22,19 +23,19 @@ function renderBooks() {
                             <td>${book.id}</td>
                             <td>${book.title}</td>
                             <td>${book.author}</td>
-                            <td>${book.price}$</td>
+                            <td>${book[`PRICE_${getCurrLang()}`]}</td>
                             <td><img class="book-cover" onclick="onViewDetails(${book.id})" src="${book.imgUrl}"</td>
                             <td>${book.rating}/10</td>
                             <td>${book.qty}</td>
                             <td>
                                 <div class="book-options">
                                     <div class="book-options1">
-                                        <button type="button" class="btn btn-secondary change-price" onclick="onChangePrice(${book.id})">change price</button>
-                                        <button type="button" class="btn btn-secondary change-rating" onclick="onChangeRating(${book.id})">change rating</button>
+                                        <button type="button" class="btn btn-secondary change-price" onclick="onChangePrice(${book.id})">${translateItem('CHANGE_PRICE')}</button>
+                                        <button type="button" class="btn btn-secondary change-rating" onclick="onChangeRating(${book.id})">${translateItem('CHANGE_RATING')}</button>
                                         </div>    
                                     <div class="book-options2">   
-                                        <button type="button" class="btn btn-success books-sold" onclick="onBooksSold(${book.id})">books sold</button>
-                                        <button type="button" class="btn btn-primary books-restock" onclick="onBooksRestock(${book.id})">restock</button>
+                                        <button type="button" class="btn btn-success books-sold" onclick="onBooksSold(${book.id})">${translateItem('BOOKS_SOLD')}</button>
+                                        <button type="button" class="btn btn-primary books-restock" onclick="onBooksRestock(${book.id})">${translateItem('RESTOCK')}</button>
                                         <button type="button" class="btn btn-danger delete" onclick="onDeleteBook(${book.id})">X</button>
                                     </div>
                                 </div>
@@ -49,17 +50,23 @@ function renderBooks() {
 
 function renderPageNav() {
     var pageAmt = Math.ceil(getBooksNum() / gBooksPerPage);
-    var strHtml = `<button class="btn btn-light page-selection" onclick="onMoveToPage(\'back\')">⮜</button>`;
+    var strHtml = `<button class="btn btn-light page-selection" onclick="onMoveToPage(\'back\')" data-trans="PREV_PAGE">⮜</button>`;
     for (let i = 0; i < pageAmt; i++) {
         strHtml += `<button class="btn btn-light page-selection" onclick="onMoveToPage(${i})">${i + 1}</button>`;
     }
-    strHtml += '<button class="btn btn-light page-selection" onclick="onMoveToPage(\'next\')">⮞</button>';
+    strHtml += '<button class="btn btn-light page-selection" onclick="onMoveToPage(\'next\')" data-trans="NEXT_PAGE">⮞</button>';
     $('.page-nav').html(strHtml);
 
 }
 
 function onDeleteBook(id) {
-    if (!confirm('are you sure?')) return;
+    var $confirmModal = $('.confirm-modal');
+    $confirmModal.show();
+    $confirmModal.find('.confirm').click(function () { onConfirmDeletion(id) })
+}
+
+function onConfirmDeletion(id) {
+    onCloseModal();
     deleteBook(id);
     renderBooks();
     renderPageNav();
@@ -72,13 +79,13 @@ function onChangePrice(id) {
     $button.off();
     $button.click(function () {
         var newPropertyVal = +$updateModal.find('.update').val();
-        if (newPropertyVal < 0 || !newPropertyVal) myAlert('invalid price');
+        if (newPropertyVal < 0 || !newPropertyVal) myAlert(translateItem('INVALID_PRICE'));
         else updateBook(id, 'price', newPropertyVal);
         $('.main-container').removeClass('blur');
         $updateModal.hide();
         renderBooks();
     });
-    $updateLabel.val('New Price?');
+    $updateLabel.attr('placeholder', translateItem('NEW_PRICE'));
     $updateModal.show();
     $('.main-container').addClass('blur');
 }
@@ -90,13 +97,13 @@ function onChangeRating(id) {
     $button.off();
     $button.click(function () {
         var newPropertyVal = +$updateModal.find('.update').val();
-        if (newPropertyVal < 0 || newPropertyVal > 10 || !newPropertyVal) myAlert('invalid rating');
+        if (newPropertyVal < 0 || newPropertyVal > 10 || !newPropertyVal) myAlert(translateItem('INVALID_RATING'));
         else updateBook(id, 'rating', newPropertyVal);
         $('.main-container').removeClass('blur');
         $updateModal.hide();
         renderBooks();
     });
-    $updateLabel.val('New Rating?');
+    $updateLabel.attr('placeholder', translateItem('NEW_RATING'));
     $updateModal.show();
     $('.main-container').addClass('blur');
 }
@@ -108,14 +115,14 @@ function onBooksSold(id) {
     $button.off();
     $button.click(function () {
         var newPropertyVal = +$updateModal.find('.update').val();
-        if (newPropertyVal > getBookById(id).qty) myAlert('not enough in stock');
-        else if (!newPropertyVal) myAlert('invalid number');
+        if (newPropertyVal > getBookById(id).qty) myAlert(translateItem('NOT_ENOUGH_IN_STOCK'));
+        else if (!newPropertyVal) myAlert(translateItem('INVALID_NUMBER'));
         else updateBook(id, 'qty', getBookById(id).qty - newPropertyVal);
         $('.main-container').removeClass('blur');
         $updateModal.hide();
         renderBooks();
     });
-    $updateLabel.val('How many sold?');
+    $updateLabel.attr('placeholder', translateItem('HOW_MANY_SOLD'));
     $updateModal.show();
     $('.main-container').addClass('blur');
 }
@@ -127,13 +134,13 @@ function onBooksRestock(id) {
     $button.off();
     $button.click(function () {
         var newPropertyVal = +$updateModal.find('.update').val();
-        if (!newPropertyVal || newPropertyVal < 0) myAlert('invalid number');
+        if (!newPropertyVal || newPropertyVal < 0) myAlert(translateItem('INVALID_NUMBER'));
         else updateBook(id, 'qty', getBookById(id).qty + newPropertyVal);
         $('.main-container').removeClass('blur');
         $updateModal.hide();
         renderBooks();
     });
-    $updateLabel.val('How many bought?');
+    $updateLabel.attr('placeholder', translateItem('HOW_MANY_BOUGHT'));
     $updateModal.show();
     $('.main-container').addClass('blur');
 }
@@ -173,9 +180,9 @@ function onSubmitNewBook() {
         newBookPrice < 0 || !newBookimage || !newBookRating ||
         newBookRating < 0 || newBookRating > 10 ||
         newBookQty < 0 || !Number.isInteger(+newBookQty)) {
-            myAlert('invalid values');
-            return;
-        };
+        myAlert(translateItem('INVALID_VALUES'));
+        return;
+    };
     $newBookModal.hide();
     $('.main-container').removeClass('blur');
     createBook(newBookTitle, newBookAuthor, newBookPrice, newBookimage, newBookRating, newBookQty);
@@ -223,4 +230,19 @@ function onStepRating(id, value) {
     stepRating(id, value);
     renderBooks();
     onViewDetails(id);
+}
+
+function onChangeLang(lang) {
+    // debugger;
+    changeLang(lang);
+    if (lang === 'he') $('body').addClass('rtl');
+    else $('body').removeClass('rtl');
+    var elsForTranslate = document.querySelectorAll('[data-trans]');
+    for (var i = 0; i < elsForTranslate.length; i++) {
+        var elCurr = elsForTranslate[i];
+        var transTxt = translateItem(elCurr.dataset.trans);
+        if (elCurr.nodeName === 'INPUT') elCurr.placeholder = transTxt;
+        else elCurr.innerHTML = transTxt;
+    }
+    renderBooks();
 }

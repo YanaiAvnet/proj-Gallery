@@ -10,7 +10,8 @@ function createBook(title, author, price, imgUrl, rating, qty) {
         id: gCurrId,
         title: title,
         author: author,
-        price: price,
+        PRICE_en: +price + '$',
+        PRICE_he: (+price * 3.6105).toFixed(2) + '₪',
         imgUrl: imgUrl,
         rating: rating,
         qty: qty
@@ -42,7 +43,7 @@ function updateBook(id, property, value) {
     getBookById(id)[property] = value;
 }
 
-function getBooksForDisplay(page, booksPerPage) {  
+function getBooksForDisplay(page, booksPerPage) {
     var filteredBooks = gBooks.filter(function filterBooks(book) {
         switch (gFilterMethod) {
             case 'all': return true;
@@ -54,9 +55,9 @@ function getBooksForDisplay(page, booksPerPage) {
             case ('title'): return book1.title.toLowerCase() > book2.title.toLowerCase() ? 1 : -1;
             case ('author'): return book1.author.toLowerCase() > book2.author.toLowerCase() ? 1 : -1;
             case ('rating'): if (book1.rating !== book2.rating) return book2.rating - book1.rating;
-                             else return book1.title.toLowerCase() > book2.title.toLowerCase() ? 1 : -1;
+            else return book1.title.toLowerCase() > book2.title.toLowerCase() ? 1 : -1;
             case ('price'): if (book1.price !== book2.price) return book1.price - book2.price;
-                            else return book1.title.toLowerCase() > book2.title.toLowerCase() ? 1 : -1;
+            else return book1.title.toLowerCase() > book2.title.toLowerCase() ? 1 : -1;
         }
     })
     return filteredBooks.slice(page * booksPerPage, (page + 1) * booksPerPage);

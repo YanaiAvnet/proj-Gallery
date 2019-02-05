@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-.login-form {
+/* .login-form {
     border: 1px black solid;
     border-radius: 5px;
     background-color: gray;
@@ -17,7 +17,7 @@
     flex-flow: column;
     align-items: center;
     padding: 50px;
-}
+} */
 
 .login-form * {
     display: block;
@@ -54,58 +54,91 @@ body {
 }
 
 .nav {
+    position: absolute;
+    padding: 30px;
+    bottom: 0;
     display: flex;
     flex-flow: row;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-.nav>button {
-    width: 101px;
-    height: 30px;
+.nav button {
+    margin: 5px;
+    z-index: 3;
 }
 
 h1 {
     margin: 0;
 }
 
-.user-container {
-    border: 1px black solid;
+.container, .login-form {
+    border: 1px solid rgba(0, 255, 255, 0.514);
     border-radius: 5px;
-    background-color: gray;
+    background-image: repeating-linear-gradient(rgba(229, 245, 238, 0.459), rgba(137, 216, 189, 0.459) 200px, rgba(229, 245, 238, 0.459) 250px);
     position: absolute;
-    width: 300px;
-    height: 250px;
     margin: auto;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -55%);
     display: flex;
     flex-flow: column;
     align-items: center;
+    z-index: 2;
+    width: 80vw;
+    height: 65vh;
+}
+
+.login-form {
+    width: 300px;
+    height: 250px;
+}
+
+.container h1, .container table {
+    padding: 30px;
+}
+
+.user-container {
     padding: 50px;
+    overflow: hidden;
+}
+
+.user-container::before {
+    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae.';
+    position: absolute;
+    height: 110vh;
+    width: 110vw;
+    top: -10vh;
+    transform: rotate(10deg);
+    font-size: 8px;
+    color: rgba(0, 128, 0, 0.466);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.user-container::after {
+    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero! Illum debitis aliquam neque soluta, iste cum! Cumque tempore excepturi sapiente, illum rem modi nobis neque omnis, eveniet molestiae vitae.';
+    position: absolute;
+    height: 110vh;
+    width: 110vw;
+    top: -10vh;
+    transform: rotate(-60deg);
+    font-size: 20px;
+    color: rgba(0, 128, 0, 0.24);
+    pointer-events: none;
+    z-index: 2;
 }
 
 .admin-container {
-    border: 1px black solid;
-    border-radius: 5px;
-    background-color: gray;
-    position: absolute;
-    width: 450px;
-    height: 400px;
-    margin: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-flow: column;
-    align-items: center;
     padding: 0px; 
 }
 
 .logged-user {
+    border: 1px solid rgba(39, 77, 39, 0.425);
+    border-radius: 5px;
     position: absolute;
     top: 0;
     left: 0;
+    padding: 5px 20px;
 }
 
 div.users {
@@ -118,13 +151,44 @@ div.users {
 .view-options {
     display: flex;
     flex-flow: row;
-    justify-content: center;
     position: absolute;
-    bottom: 30px;
+    justify-content: space-between;
+    bottom: 0;
+    left: 0;
     width: 100%;
+    padding: 30px;
 }
 
 .select-view {
     width: 180px;
     height: 40px;
+}
+
+.select-sort {
+    display: flex;
+    flex-flow: row;
+}
+
+.select-sort label {
+    width: 100px;
+    align-self: center;
+}
+
+.select-view img {
+    border: 1px solid rgb(39, 77, 39);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .2s
+}
+
+.select-view img:hover {
+    background-color: rgba(39, 77, 39, 0.5);
+}
+
+button, select {
+    cursor: pointer;
+}
+
+select:hover {
+    border: 1px solid black;
 }
