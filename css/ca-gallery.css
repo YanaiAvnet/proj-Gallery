@@ -1,6 +1,7 @@
 body {
     overflow-x: hidden;
     font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-image: repeating-linear-gradient(45deg, rgb(241, 229, 212), rgb(241, 234, 224) 100px, rgb(241, 229, 212) 200px)
 }
 p {
     line-height: 1.75;
@@ -63,7 +64,7 @@ body {
     -webkit-tap-highlight-color: #fed136;
 }
 .offcanvas-btn {
-    z-index: 100000;
+    z-index: 2000001;
     position: fixed;
     top: 8%;
     left: 3%;
@@ -84,8 +85,8 @@ body {
 .offcanvas-aside {
     position: fixed;
     height: 100%;
-    z-index: 100000;
-    background: rgb(230, 227, 255);
+    z-index: 1000001;
+    background-image: repeating-linear-gradient(45deg, rgb(190, 187, 209), rgb(212, 211, 221) 100px, rgb(190, 187, 209) 200px);
     width: 80vw;
     left: -80vw;
     transition: all 0.3s ease;
@@ -190,7 +191,7 @@ body {
 header.masthead {
     text-align: center;
     color: white;
-    background-image: url("../img/header-bg.jpg");
+    background-image: url("../img/ScBackground1.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -289,7 +290,7 @@ header.masthead .intro-text .intro-heading {
     margin: 0 auto;
     padding: 25px;
     text-align: center;
-    background-color: white;
+    /* background-color: rgba(235, 255, 235, 0.219); */
 }
 #portfolio .portfolio-item .portfolio-caption h4 {
     margin: 0;

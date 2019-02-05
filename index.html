@@ -38,15 +38,15 @@
       <div class="contact-form">
         <div class="contact-item">
           <label for="email">Your Email</label>
-          <input class="contact-email" type="email" name="email" value="Name@example.com">
+          <input class="contact-email" type="email" name="email" placeholder="Name@example.com">
         </div>
         <div class="contact-item">
           <label for="subject">Subject</label>
-          <input class="contact-subject" type="text" name="subject" value="subject">
+          <input class="contact-subject" type="text" name="subject" placeholder="subject">
         </div>
         <div class="contact-item">
           <label for="message">Message Body</label>
-          <textarea class="contact-message" type="text" name="message" value="type your message here"></textarea>
+          <textarea class="contact-message" type="text" name="message" placeholder="type your message here"></textarea>
         </div>
         <div class="contact-item">
         </div>
@@ -76,7 +76,7 @@
             <a class="nav-link js-scroll-trigger" href="#me">Me</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            <a class="nav-link js-scroll-trigger" onClick="openCanvas()">Contact</a>
           </li>
         </ul>
       </div>
@@ -88,7 +88,7 @@
     <div class="container">
       <div class="intro-text">
         <div class="intro-lead-in">Welcome To my Portfolio</div>
-        <div class="intro-heading">It's Nice To Meet You</div>
+        <div class="intro-heading">Rock On!</div>
         <a class="btn btn-xl js-scroll-trigger" href="#services">Tell Me More</a>
       </div>
     </div>
@@ -100,7 +100,7 @@
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading">Specialities</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h3 class="section-subheading text-muted">Interactive design and functionality.</h3>
         </div>
       </div>
       <div class="row text-center">
@@ -139,12 +139,12 @@
   </section>
 
   <!-- Portfolio Grid -->
-  <section class="bg-light" id="portfolio">
+  <section class="my-section" id="portfolio">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading">Portfolio</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h3 class="section-subheading text-muted">This is a selection of works by me.</h3>
         </div>
       </div>
       <div class="row portfolio-container">
@@ -238,7 +238,7 @@
 
 
   <!-- Me -->
-  <section class="bg-light" id="me" style="padding: 0px;">
+  <section class="my-section" id="me" style="padding: 0px;">
     <div class="row">
       <div class="col-sm-4">
         <div class="team-member">
@@ -247,7 +247,7 @@
           <p class="text-muted">Web Developer</p>
           <ul class="list-inline social-buttons">
             <li class="list-inline-item">
-              <a href="https://www.facebook.com/yanai.avnet">
+              <a href="https://www.facebook.com/yanai.avnet" target="_blank">
                 <i class="fa fa-facebook"></i>
               </a>
             </li>
@@ -255,11 +255,7 @@
         </div>
       </div>
       <div class="col-sm-8 flex-align-center">
-        <p class="large text-muted  about-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut
-          eaque, laboriosam veritatis, quos non quis ad perspiciatis,
-          totam corporis ea, alias ut unde. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
-          laboriosam veritatis, quos non quis ad perspiciatis,
-          totam corporis ea, alias ut unde.</p>
+        <p class="large text-muted  about-description">Hi! I'm Yanai Avnet, 26 years old coding academy student from Ramat-Gan, Israel. <br>Up-and-coming web developer by day and musician by night, come check out some of my stuff!</p>
       </div>
     </div>
   </section>
@@ -276,21 +272,21 @@
         </div>
         <div class="col-md-4 flex-align-center">
           <ul class="list-inline social-buttons flex-align-center">
-            <li class="list-inline-item">
+            <!-- <li class="list-inline-item">
               <a href="#">
                 <i class="fa fa-twitter"></i>
               </a>
-            </li>
+            </li> -->
             <li class="list-inline-item flex-align-center">
               <a href="#">
                 <i class="fa fa-facebook"></i>
               </a>
             </li>
-            <li class="list-inline-item">
+            <!-- <li class="list-inline-item">
               <a href="#">
                 <i class="fa fa-linkedin"></i>
               </a>
-            </li>
+            </li> -->
           </ul>
         </div>
         <div class="col-md-4 flex-align-center">
@@ -313,11 +309,11 @@
   <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
+        <!-- <div class="close-modal" data-dismiss="modal">
           <div class="lr">
             <div class="rl"></div>
           </div>
-        </div>
+        </div> -->
         <div class="container">
           <div class="row">
             <div class="col-lg-8 mx-auto">

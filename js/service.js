@@ -45,11 +45,21 @@ var gProjs = [
         id: 'minesweeper',
         name: 'minesweeper',
         title: 'minesweeper',
-        desc: 'a game where a user is asked to think of a character and the computer attempts to find out who it is by asking yes or no questions. if the computer fails the user is asked to teach it.',
+        desc: 'a game where a player has to find the locations of mines on a field. the player can ask for a hint or let the bot play a move.',
         url: 'img/minesweeper.png',
         publishedAt: 1448693940000,
         labels: ['bot', 'recursions'],
         projUrl: 'projs/minesweeper/minesweeper.html'
+    },
+    {
+        id: 'pacman',
+        name: 'pacman',
+        title: 'pacman',
+        desc: 'you play pacman, you have to collect all the food on the field while avoiding the ghosts.',
+        url: 'img/pacman.png',
+        publishedAt: 1448693940000,
+        labels: ['matrices', 'games'],
+        projUrl: 'projs/pacman/index.html'
     }
 ]
 function getProjectsForDisplay() {
