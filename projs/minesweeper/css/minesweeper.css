@@ -1,0 +1,174 @@
+body {
+    box-sizing: border-box;
+    background-color: #b9b9b9;
+}
+
+.gamearea {
+    margin: auto;
+    height: 90%;
+    width: 90%;
+    border-bottom: 3px solid gray;
+    border-right: 3px solid gray;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    min-width: 300px;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.board {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+.board td {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.board img {
+    width: 30px;
+    width: 30px;
+    pointer-events: none;
+}
+
+.controlpanel {
+    border-bottom: 3px solid gray;
+    border-right: 3px solid gray;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+}
+
+.smiley {
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.smiley p {
+    display: block;
+    border-top: 3px solid gray;
+    border-left: 3px solid gray;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    background-color: black;
+    color: red;
+    font-size: 180%;
+    height: 40px;
+    position: absolute;
+    transform: translate(0, -50px);
+}
+
+.smileysquare {
+    display: block;
+    border-bottom: 3px solid gray;
+    border-right: 3px solid gray;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-25px);
+    cursor: pointer;
+}
+
+.clock {
+    width: 50px;
+    right: 10%;
+    top: 10%;
+    text-align: center;
+}
+
+.score {
+    width: 80px;
+    left: 10%;
+    top: 10%;
+}
+
+.smileysquare img {
+    height: 100%;
+    pointer-events: none;
+}
+
+.hints {
+    position: relative;
+    height: 70px;
+    padding-top: 10px; 
+}
+
+.hints img {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    transition: opacity .5s;
+    /* display: none; */
+}
+
+.change-difficulty, .show-highscores, .back-to-menu {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.difficulty-menu, .highscores {
+    width: 400px;
+    margin: auto;
+    margin-top: 200px;
+    height: 350px;
+    text-align: center;
+    border-bottom: 2px solid gray;
+    border-right: 2px solid gray;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+}
+
+.go-button {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    height: 60px;
+    width: 120px;
+    cursor: pointer;
+    font-size: 200%;
+}
+
+.user-name {
+    text-align: center;
+}
+
+.highscores table {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.highscores td, .highscores th {
+    background-color: white;
+}
+
+.highscores table * {
+    border: 1px solid black;
+}
+
+.solve-ai {
+    display: inline-block;
+    border-bottom: 3px solid gray;
+    border-right: 3px solid gray;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    right: 25px;
+    /* transform: translate(-25px); */
+    cursor: pointer;
+}
+
+.solve-ai img {
+    height: 100%;
+    pointer-events: none;
+}

@@ -1,0 +1,26 @@
+.proj-img {
+    cursor: pointer;
+}
+
+.proj-img:hover {
+    opacity: .5;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column; 
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column; 
+    height: 80px;
+}
+
+.contact-item:nth-child(3) {
+    height: 200px;
+}
+
+.contact-item:nth-child(3) textarea {
+    flex: 1;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/safe-content.css">
+    <title>safe-content</title>
+</head>
+
+<body onload="init()">
+    <div class="login-form">
+        <label for="user-name">user name:</label>
+        <input class="user-name" type="text" name="user-name">
+        <label for="password">password:</label>
+        <input class="password" type="text" name="password">
+        <button class="login-button" onclick="onLogin()">log in</button>
+        <div class="invalid-input"></div>
+    </div>
+    <div class="container user-container">
+        <div class="logged-user"></div>
+        <div class="safe-content">
+            <h1>safe content</h1>
+        </div>
+        <div class="nav">
+            <button class="logout" onclick="onLogout()">log out</button>
+            <button class="to-admin-page" onclick="onGoToAdminPage()">to admin page</button>
+        </div>
+    </div>
+    <script src="js/util-service.js"></script>
+    <script src="js/storage-service.js"></script>
+    <script src="js/safe-content-service.js"></script>
+    <script src="js/safe-content-controller.js"></script>
+</body>
+
+</html>

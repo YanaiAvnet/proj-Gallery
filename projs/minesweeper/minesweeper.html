@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/minesweeper.css" />
+</head>
+
+<body>
+    <div class="gamearea" style="display: none">
+        <div class="controlpanel">
+            <div class="smiley">
+                <p class="score"></p>
+                <div class="smileysquare" onmousedown="press(this)" onmouseup="unpress(this)" onmouseout="unpress(this)"
+                    onclick="initGame()">
+                    <img src="img/smile.png">
+                </div>
+                <p class="clock"></p>
+            </div>
+            <div class="hints">
+                <img src="img/hint.png" data-is-used="no" onclick="getHint(this)">
+                <img src="img/hint.png" data-is-used="no" onclick="getHint(this)">
+                <img src="img/hint.png" data-is-used="no" onclick="getHint(this)">
+                <div class="solve-ai" onmousedown="press(this)" onmouseup="unpress(this)" onmouseout="unpress(this)" onclick="solveAI()">
+                    <img src="img/AI.png" data-is-used="no" onclick="getHint(this)">
+                </div>
+                <p class="hint-notification" style="visibility: hidden">click to get a hint</p>
+            </div>
+
+        </div>
+        <div class="container"></div>
+        <button class="change-difficulty" onclick="changeDifficulty()">change difficulty</button>
+    </div>
+    <div class="highscores" style="display: none">
+        <table>
+            <thead>
+                <th>
+                    Level
+                </th>
+                <th>
+                    Best Score
+                </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Easy
+                    </td>
+                    <td class="easy-score">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Medium
+                    </td>
+                    <td class="medium-score">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Hard
+                    </td>
+                    <td class="hard-score">
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="back-to-menu" onclick="backToMenu()">Back to menu</button>
+    </div>
+    <div class="difficulty-menu">
+        <form>
+            <fieldset>
+                <legend>choose difficulty</legend>
+                <input type="radio" name="difficulty" value="1">
+                <label for="1">Easy</label>
+                <input type="radio" name="difficulty" value="2">
+                <label for="2">Medium</label>
+                <input type="radio" name="difficulty" value="3">
+                <label for="3">Hard</label>
+            </fieldset>
+        </form>
+        <div class="user-name">
+            <label class="name-input-label" for="name">Please enter your name</label><br>
+            <input class="name-input" type="text" name="name" value="Your name">
+        </div>
+        <button type="button" class="go-button" onclick="startGame()">GO!</button>
+        <button class="show-highscores" onclick="showHighScores()">Show high scores</button>
+    </div>
+    <script src="js/util.js"></script>
+    <script src="js/minesweeper.js"></script>
+    <script src="js/AI.js"></script>
+</body>
+
+</html>

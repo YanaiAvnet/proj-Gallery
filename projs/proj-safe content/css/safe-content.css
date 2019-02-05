@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
+.login-form {
+    border: 1px black solid;
+    border-radius: 5px;
+    background-color: gray;
+    position: absolute;
+    width: 300px;
+    height: 250px;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 50px;
+}
+
+.login-form * {
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+body {
+    margin: 0;
+    background-color: lightblue;
+}
+
+.users>div {
+    display: inline-block;
+}
+
+.users img {
+    width: 100px;
+}
+
+.select-view img {
+    width: 40px;
+    height: 40px;
+}
+
+.safe-content {
+    text-align: center;
+    margin: 0;
+    height: 200px;
+}
+
+.admin-content * {
+    text-align: center;
+}
+
+.nav {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.nav>button {
+    width: 101px;
+    height: 30px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.user-container {
+    border: 1px black solid;
+    border-radius: 5px;
+    background-color: gray;
+    position: absolute;
+    width: 300px;
+    height: 250px;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 50px;
+}
+
+.admin-container {
+    border: 1px black solid;
+    border-radius: 5px;
+    background-color: gray;
+    position: absolute;
+    width: 450px;
+    height: 400px;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 0px; 
+}
+
+.logged-user {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+div.users {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.view-options {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+}
+
+.select-view {
+    width: 180px;
+    height: 40px;
+}

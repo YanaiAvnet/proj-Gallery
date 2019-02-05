@@ -1,0 +1,82 @@
+/* Components */
+* {
+  box-sizing:border-box;
+}
+
+body {
+  background: #f1f1f1;
+  font-family:helvetica neue, helvetica, arial, sans-serif;
+  font-weight:200;
+}
+
+.btn {
+    border: 0;
+    padding: 0.5em 1em;
+    color: darkred;
+    border-radius: 4px;
+    background: f2e3df;
+    text-decoration: none;
+    transition: background-color 0.5s;
+}
+.btn:hover {
+    background-color:lightsalmon;
+}
+
+.btn-add {
+    float: right;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.time-stamp {
+    color: rgb(189, 189, 189);
+}
+
+.content {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.todos {
+    text-align: center;
+    width: 100%;
+    height: 300px;
+}
+
+.filter-zone, .sort-zone, .todo-stats {
+    flex: 1;
+    height: 200px;
+    display: inline-block;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.todos tr:first-child .move-up {
+    color: gray;
+}
+
+.todos tr:first-child .move-up:hover {
+    background-color: #dddddd;
+}
+
+.todos tr:last-child .move-down {
+    color: gray;
+}
+
+.todos tr:last-child .move-down:hover {
+    background-color: #dddddd;
+}
+
+button.selected {
+    border: 2px solid red;
+    padding: 0;
+}
+
+.filter-zone button {
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    padding: 2px;
+}

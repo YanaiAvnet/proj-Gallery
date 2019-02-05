@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/book-shop.css">
+    <title>Book-shop</title>
+</head>
+
+<body onload="init()">
+    <div class="alert alert-warning" role="alert" style="display: none">
+    </div>
+    <div class="update-modal modal">
+        <label for="update"></label>
+        <input type="text" name="update" class="update">
+        <div class="update-buttons">
+            <button class="btn btn-light" onclick="onCloseModal()">cancel</button>
+            <button class="update-button btn btn-light">OK</button>
+        </div>
+    </div>
+    <div class="details-modal modal">
+        <div class="img"></div>
+        <div class="details">
+            <div class="title"></div>
+            <div class="rating"></div>
+            <div class="rating-change">
+                <button class="minus-rating btn btn-light">-</button>
+                <button class="plus-rating btn btn-light">+</button>
+            </div>
+            <button class="btn btn-light" onclick="onCloseModal()">close</button>
+        </div>
+    </div>
+    <div class="new-book-modal modal">
+        <table class="new-book-inputs">
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="title">Title:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="title" class="title" value="Title">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="author">Author:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="author" class="author" value="Author">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="price">Price:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="price" class="price" value="10">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="img-url">Link to cover:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="img-url" class="img-url" value="https://via.placeholder.com/300">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="rating">Rating:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="rating" class="rating" value="10">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="qty">Quantity:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="qty" class="qty" value="10">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="new-book-buttons">
+            <button class="btn btn-light" onclick="onCloseModal()">cancel</button>
+            <button class="btn btn-light" onclick="onSubmitNewBook()">OK</button>
+        </div>
+    </div>
+    <div class="main-container">
+        <button class="add-book btn btn-light" onclick="onAddBook()">+</button>
+        <div class="empty-display">
+            <h1>no books to show</h1>
+        </div>
+        <div class="books-container">
+            <table class="table">
+                <thead class="thead-dark">
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Price</th>
+                    <th>Cover</th>
+                    <th>Rating</th>
+                    <th>Quantity</th>
+                    <th>Options</th>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="control-bar">
+            <label for="filter">Filter By:</label>
+            <select name="filter" id="filter" onchange="onFilterBooks(this.value)">
+                <option value="all">All</option>
+                <option value="in-stock">In Stock</option>
+            </select>
+            <label for="sort">Sort By:</label>
+            <select name="sort" id="sort" onchange="onSortBooks(this.value)">
+                <option value="title">Title</option>
+                <option value="author">Author</option>
+                <option value="rating">Rating</option>
+                <option value="price">Price</option>
+            </select>
+            <div class="page-info">
+                <div class="page-label"></div>
+                <div class="page-nav"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="js/storage-service.js"></script>
+    <script src="js/book-shop-service.js"></script>
+    <script src="js/book-shop-controller.js"></script>
+</body>
+
+</html>
